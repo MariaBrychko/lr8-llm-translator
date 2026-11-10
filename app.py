@@ -79,6 +79,16 @@ with gr.Blocks(title="Перекладач з англійської на укр
 
     button.click(fn=translate_text, inputs=[source, key], outputs=result)
 
-
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(
+        theme=gr.themes.Soft(
+            primary_hue="indigo",
+            neutral_hue="slate",
+        ),
+        css="""
+        .gradio-container {
+            max-width: 820px !important;
+            margin-inline: auto !important;
+        }
+        """,
+    )
